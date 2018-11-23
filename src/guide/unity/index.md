@@ -129,7 +129,7 @@ UIPane只保存了UI包的名称和组件的名称，它不对纹理或其他资
 
 注意：Render Mode只定义了FairyGUI对待这个UI的方式，通常是坐标相关的操作（如点击检测等），但和渲染无关。UI由哪个相机渲染是由GameObject的layer决定的。所以如果发现UI没有显示出来，可以检查一下GameObject的layer是否正确。例如如果是Screen Space，GameObject应该在UI层，如果是WorldSpace，则是在Default层或者其他自定义的层次。
 
-- `Render Camera` 当Render Mode是Screen Space Camera或者World Space时可以设置。如果不设置，默认为场景的主相机。注意，当RenderMode为WorldSpace时，如果这里没有设置相机，那么场景里一定要有主相机，否则UI无法点击。
+- `Render Camera` 当Render Mode是Screen Space Camera或者World Space时可以设置。如果不设置，默认为场景的主相机。注意，当RenderMode为WorldSpace时，如果这里没有设置相机，那么场景里一定要有主相机，否则UI无法点击。（注意，这个主相机是在场景被创建的时候，便设定了，之后切换主相机，仍然会使用最初的那个相机作为检测相机，如果你想更换检测相机，请设置render camera）
 
 - `Sorting Order` 调整UIPanel的显示顺序。越大的显示在越前面。
 
